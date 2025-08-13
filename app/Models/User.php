@@ -6,11 +6,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable
 {
     /** @use HasFactory<\Database\Factories\UserFactory> */
-    use HasFactory, Notifiable;
+    use HasFactory, Notifiable, HasApiTokens;
 
     /**
      * The attributes that are mass assignable.
@@ -44,5 +45,43 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
+    }
+
+    /**
+     * Get the organizations owned by the user.
+     */
+    public function ownedOrganizations()
+    {
+        return $this->hasMany(Organization::class, 'owner_id');
+    }
+
+    /**
+     * Get the teams the user belongs to.
+     */
+    public function teams()
+    {
+        return $this->belongsToMany(Team::class, 'team_user')
+                    ->withPivot('role')
+                    ->withTimestamps();
+    }
+
+    /**
+     * Get the organizations the user belongs to through teams.
+     */
+    public function organizations()
+    {
+        return $this->hasManyThrough(Organization::class, Team::class, 'id', 'id', 'id', 'organization_id')
+                    ->join('team_user', 'teams.id', '=', 'team_user.team_id')
+                    ->where('team_user.user_id', $this->id);
+    }
+
+    /**
+     * Get pending invitations for this user's email.
+     */
+    public function pendingInvitations()
+    {
+        return Invitation::where('email', $this->email)
+                        ->where('accepted_at', null)
+                        ->where('expires_at', '>', now());
     }
 }
