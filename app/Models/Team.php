@@ -83,4 +83,20 @@ class Team extends Model
     {
         return $this->invitations()->where('accepted_at', null)->where('expires_at', '>', now());
     }
+
+    /**
+     * Get the monitors for this team.
+     */
+    public function monitors()
+    {
+        return $this->hasMany(Monitor::class);
+    }
+
+    /**
+     * Get active monitors for this team.
+     */
+    public function activeMonitors()
+    {
+        return $this->monitors()->where('is_active', true);
+    }
 }

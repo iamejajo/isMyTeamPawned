@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\OrganizationController;
 use App\Http\Controllers\Api\TeamController;
+use App\Http\Controllers\Api\MonitoringController;
 
 // Public routes
 Route::post('/register', [AuthController::class, 'register']);
@@ -29,4 +30,11 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::get('/teams/{team}/members', [TeamController::class, 'members']);
     Route::delete('/teams/{team}/members', [TeamController::class, 'removeMember']);
     Route::patch('/teams/{team}/members/role', [TeamController::class, 'updateMemberRole']);
+
+    // Monitoring routes
+    Route::post('/monitoring', [MonitoringController::class, 'store']);
+    Route::get('/monitoring', [MonitoringController::class, 'index']);
+    Route::delete('/monitoring/{id}', [MonitoringController::class, 'destroy']);
+    Route::patch('/monitoring/{id}', [MonitoringController::class, 'update']);
+    Route::get('/monitoring/stats', [MonitoringController::class, 'stats']);
 });

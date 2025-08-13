@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\User;
 use App\Models\Organization;
 use App\Models\Team;
+use App\Models\Monitor;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
@@ -64,6 +65,37 @@ class TestDataSeeder extends Seeder
 
         $team2->users()->attach($user1->id, ['role' => 'owner']);
         $team2->users()->attach($user2->id, ['role' => 'member']);
+
+        // Add test monitors
+        $team->monitors()->createMany([
+            [
+                'type' => 'email',
+                'value' => 'admin@example.com',
+                'notes' => 'Primary admin email',
+                'is_active' => true,
+            ],
+            [
+                'type' => 'email',
+                'value' => 'john@example.com',
+                'notes' => 'Team lead email',
+                'is_active' => true,
+            ],
+            [
+                'type' => 'domain',
+                'value' => 'example.com',
+                'notes' => 'Company domain',
+                'is_active' => true,
+            ],
+        ]);
+
+        $team2->monitors()->createMany([
+            [
+                'type' => 'email',
+                'value' => 'marketing@example.com',
+                'notes' => 'Marketing team email',
+                'is_active' => true,
+            ],
+        ]);
 
         $this->command->info('Test data seeded successfully!');
         $this->command->info('Admin: admin@example.com / password');
