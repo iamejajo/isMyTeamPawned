@@ -16,8 +16,9 @@ class BreachEventsTable
     {
         return $table
             ->columns([
-                TextColumn::make('monitor_id')
-                    ->numeric()
+                TextColumn::make('monitor.value')
+                    ->label('Monitored Item')
+                    ->searchable()
                     ->sortable(),
                 TextColumn::make('breach_name')
                     ->searchable(),
@@ -45,7 +46,6 @@ class BreachEventsTable
             ])
             ->recordActions([
                 ViewAction::make(),
-                EditAction::make(),
             ])
             ->toolbarActions([
                 BulkActionGroup::make([

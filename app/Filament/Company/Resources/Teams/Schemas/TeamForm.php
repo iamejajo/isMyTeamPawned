@@ -3,7 +3,9 @@
 namespace App\Filament\Company\Resources\Teams\Schemas;
 
 use Filament\Forms\Components\TextInput;
+use Filament\Forms\Components\Select;
 use Filament\Schemas\Schema;
+use Illuminate\Support\Facades\Auth;
 
 class TeamForm
 {
@@ -11,9 +13,14 @@ class TeamForm
     {
         return $schema
             ->components([
-                TextInput::make('organization_id')
+                Select::make('organization_id')
+                    ->label('Organization')
+                    ->options(function () {
+                        $user = Auth::user();
+                        return $user->ownedOrganizations->pluck('name', 'id');
+                    })
                     ->required()
-                    ->numeric(),
+                    ->searchable(),
                 TextInput::make('name')
                     ->required(),
             ]);

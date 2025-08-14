@@ -50,9 +50,7 @@ class BreachEventResource extends Resource
     {
         return [
             'index' => ListBreachEvents::route('/'),
-            'create' => CreateBreachEvent::route('/create'),
             'view' => ViewBreachEvent::route('/{record}'),
-            'edit' => EditBreachEvent::route('/{record}/edit'),
         ];
     }
 
