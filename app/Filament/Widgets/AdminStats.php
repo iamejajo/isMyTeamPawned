@@ -18,12 +18,14 @@ class AdminStats extends StatsOverviewWidget
             Stat::make('Total Users', User::count())
                 ->description('All registered users')
                 ->descriptionIcon('heroicon-m-users')
-                ->color('success'),
+                ->color('success')
+                ->url(route('filament.admin.resources.users.index')),
 
             Stat::make('Organizations', Organization::count())
                 ->description('Total companies')
                 ->descriptionIcon('heroicon-m-building-office')
-                ->color('info'),
+                ->color('info')
+                ->url(route('filament.admin.resources.organizations.index')),
             Stat::make('Teams', Team::count())
                 ->description('Total teams across organizations')
                 ->descriptionIcon('heroicon-m-user-group')
@@ -32,16 +34,19 @@ class AdminStats extends StatsOverviewWidget
                 ->description('Users across all teams')
                 ->descriptionIcon('heroicon-m-user-group')
                 ->color('warning'),
+                // ->url(route('filament.admin.resources.users.index')),
 
             Stat::make('Active Monitors', Monitor::where('is_active', true)->count())
                 ->description('Currently monitored items')
                 ->descriptionIcon('heroicon-m-eye')
                 ->color('primary'),
+                // monitors are managed in company panel
 
             Stat::make('Breach Events', BreachEvent::count())
                 ->description('Total breach findings')
                 ->descriptionIcon('heroicon-m-exclamation-triangle')
                 ->color('danger'),
+                //breach events are viewed in company panel
         ];
     }
 }
