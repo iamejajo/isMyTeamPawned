@@ -31,7 +31,7 @@ class CompanyPanelProvider extends PanelProvider
             ->colors([
                 'primary' => Color::Blue,
             ])
-            ->brandName('Team Security Dashboard')
+            ->brandName('IsMyTeamPawned')
             // ->brandLogo(asset('images/logo.png'))
             ->favicon(asset('images/favicon.png'))
             ->discoverResources(in: app_path('Filament/Company/Resources'), for: 'App\Filament\Company\Resources')
