@@ -40,10 +40,19 @@ class Organization extends Model
      */
     public function users()
     {
-        return $this->hasManyThrough(User::class, Team::class, 'organization_id', 'id', 'id', 'user_id')
-                    ->join('team_user', 'users.id', '=', 'team_user.user_id')
-                    ->join('teams', 'team_user.team_id', '=', 'teams.id')
-                    ->where('teams.organization_id', $this->id)
+        return $this->belongsToMany(User::class, 'teams', 'organization_id', 'id')
+                    ->join('team_user', 'teams.id', '=', 'team_user.team_id')
+                    ->where('team_user.user_id', 'users.id')
                     ->distinct();
+    }
+
+    /**
+     * Get the total number of users across all teams in this organization.
+     */
+    public function getTotalUsersCountAttribute()
+    {
+        return $this->teams->sum(function ($team) {
+            return $team->users->count();
+        });
     }
 }
