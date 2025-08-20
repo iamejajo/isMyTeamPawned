@@ -109,7 +109,7 @@
     <!-- Hero Section with strategic background -->
     <div class="relative">
         <!-- Circuit board background - positioned strategically -->
-        <div class="absolute inset-0 bg-circuit opacity-40" style="clip-path: polygon(0 25%, 100% 25%, 100% 75%, 0 75%);"></div>
+        <div class="absolute inset-0 bg-circuit opacity-40" style="clip-path: polygon(0 25%, 100% 25%, 100% 100%, 0 100%);"></div>
 
         <!-- Solid background overlay with gradient -->
         <div class="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black"></div>
@@ -214,13 +214,13 @@
     </div>
 
     <!-- Bottom section with circuit background -->
-    <div class="relative">
+    <div class="relative" style="margin-top: -4rem;">
         <!-- Circuit board background for bottom section -->
         <div class="absolute inset-0 bg-circuit opacity-50"></div>
         <div class="absolute inset-0 bg-black bg-opacity-50"></div>
 
         <!-- Footer -->
-        <footer class="relative z-10 text-center py-8 text-gray-400 text-sm">
+        <footer class="relative z-10 text-center py-8 text-gray-400 text-sm" style="padding-top: 5rem;">
             <p>privacy policy and @c2025 ismyteampwned.</p>
         </footer>
     </div>
