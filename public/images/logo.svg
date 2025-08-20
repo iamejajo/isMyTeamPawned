@@ -1,0 +1,20 @@
+<svg width="300" height="80" viewBox="0 0 300 80" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="1" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- TEAM (outlined) -->
+  <text x="10" y="45" font-family="Arial, sans-serif" font-size="32" font-weight="300" fill="none" stroke="white" stroke-width="1.5" filter="url(#glow)">TEAM</text>
+
+  <!-- PWNED (bold filled) -->
+  <text x="95" y="45" font-family="Arial, sans-serif" font-size="32" font-weight="bold" fill="white" filter="url(#glow)">PWNED</text>
+
+  <!-- Underline for PWNED -->
+  <line x1="95" y1="50" x2="185" y2="50" stroke="white" stroke-width="2" filter="url(#glow)"/>
+</svg>

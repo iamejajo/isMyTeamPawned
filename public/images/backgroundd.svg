@@ -1,0 +1,70 @@
+<svg width="1920" height="1080" viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="lineGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#00d4ff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0099cc;stop-opacity:0.8" />
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1920" height="1080" fill="#0a0a0a"/>
+
+  <!-- Circuit board lines -->
+  <g filter="url(#glow)">
+    <!-- Vertical lines with bends -->
+    <path d="M 100 0 L 100 200 L 150 200 L 150 400 L 100 400 L 100 600 L 180 600 L 180 800 L 100 800 L 100 1080" stroke="url(#lineGradient)" stroke-width="2" fill="none"/>
+    <path d="M 300 0 L 300 150 L 250 150 L 250 350 L 300 350 L 300 500 L 220 500 L 220 700 L 300 700 L 300 1080" stroke="url(#lineGradient)" stroke-width="2" fill="none"/>
+    <path d="M 500 0 L 500 100 L 450 100 L 450 300 L 500 300 L 500 450 L 420 450 L 420 650 L 500 650 L 500 1080" stroke="url(#lineGradient)" stroke-width="2" fill="none"/>
+    <path d="M 700 0 L 700 250 L 650 250 L 650 450 L 700 450 L 700 600 L 620 600 L 620 800 L 700 800 L 700 1080" stroke="url(#lineGradient)" stroke-width="2" fill="none"/>
+    <path d="M 900 0 L 900 180 L 850 180 L 850 380 L 900 380 L 900 530 L 820 530 L 820 730 L 900 730 L 900 1080" stroke="url(#lineGradient)" stroke-width="2" fill="none"/>
+    <path d="M 1100 0 L 1100 120 L 1050 120 L 1050 320 L 1100 320 L 1100 470 L 1020 470 L 1020 670 L 1100 670 L 1100 1080" stroke="url(#lineGradient)" stroke-width="2" fill="none"/>
+    <path d="M 1300 0 L 1300 220 L 1250 220 L 1250 420 L 1300 420 L 1300 570 L 1220 570 L 1220 770 L 1300 770 L 1300 1080" stroke="url(#lineGradient)" stroke-width="2" fill="none"/>
+    <path d="M 1500 0 L 1500 140 L 1450 140 L 1450 340 L 1500 340 L 1500 490 L 1420 490 L 1420 690 L 1500 690 L 1500 1080" stroke="url(#lineGradient)" stroke-width="2" fill="none"/>
+    <path d="M 1700 0 L 1700 200 L 1650 200 L 1650 400 L 1700 400 L 1700 550 L 1620 550 L 1620 750 L 1700 750 L 1700 1080" stroke="url(#lineGradient)" stroke-width="2" fill="none"/>
+    <path d="M 1900 0 L 1900 160 L 1850 160 L 1850 360 L 1900 360 L 1900 510 L 1820 510 L 1820 710 L 1900 710 L 1900 1080" stroke="url(#lineGradient)" stroke-width="2" fill="none"/>
+
+    <!-- Additional lines for density -->
+    <path d="M 200 0 L 200 300 L 150 300 L 150 500 L 200 500 L 200 1080" stroke="url(#lineGradient)" stroke-width="1.5" fill="none"/>
+    <path d="M 400 0 L 400 200 L 350 200 L 350 400 L 400 400 L 400 1080" stroke="url(#lineGradient)" stroke-width="1.5" fill="none"/>
+    <path d="M 600 0 L 600 350 L 550 350 L 550 550 L 600 550 L 600 1080" stroke="url(#lineGradient)" stroke-width="1.5" fill="none"/>
+    <path d="M 800 0 L 800 130 L 750 130 L 750 330 L 800 330 L 800 1080" stroke="url(#lineGradient)" stroke-width="1.5" fill="none"/>
+    <path d="M 1000 0 L 1000 270 L 950 270 L 950 470 L 1000 470 L 1000 1080" stroke="url(#lineGradient)" stroke-width="1.5" fill="none"/>
+    <path d="M 1200 0 L 1200 190 L 1150 190 L 1150 390 L 1200 390 L 1200 1080" stroke="url(#lineGradient)" stroke-width="1.5" fill="none"/>
+    <path d="M 1400 0 L 1400 310 L 1350 310 L 1350 510 L 1400 510 L 1400 1080" stroke="url(#lineGradient)" stroke-width="1.5" fill="none"/>
+    <path d="M 1600 0 L 1600 170 L 1550 170 L 1550 370 L 1600 370 L 1600 1080" stroke="url(#lineGradient)" stroke-width="1.5" fill="none"/>
+    <path d="M 1800 0 L 1800 240 L 1750 240 L 1750 440 L 1800 440 L 1800 1080" stroke="url(#lineGradient)" stroke-width="1.5" fill="none"/>
+  </g>
+
+  <!-- Glowing dots at line endpoints -->
+  <g>
+    <circle cx="100" cy="1080" r="3" fill="#00d4ff" filter="url(#glow)"/>
+    <circle cx="300" cy="1080" r="3" fill="#00d4ff" filter="url(#glow)"/>
+    <circle cx="500" cy="1080" r="3" fill="#00d4ff" filter="url(#glow)"/>
+    <circle cx="700" cy="1080" r="3" fill="#00d4ff" filter="url(#glow)"/>
+    <circle cx="900" cy="1080" r="3" fill="#00d4ff" filter="url(#glow)"/>
+    <circle cx="1100" cy="1080" r="3" fill="#00d4ff" filter="url(#glow)"/>
+    <circle cx="1300" cy="1080" r="3" fill="#00d4ff" filter="url(#glow)"/>
+    <circle cx="1500" cy="1080" r="3" fill="#00d4ff" filter="url(#glow)"/>
+    <circle cx="1700" cy="1080" r="3" fill="#00d4ff" filter="url(#glow)"/>
+    <circle cx="1900" cy="1080" r="3" fill="#00d4ff" filter="url(#glow)"/>
+
+    <!-- Additional dots at bend points -->
+    <circle cx="150" cy="200" r="2" fill="#00d4ff" filter="url(#glow)"/>
+    <circle cx="250" cy="150" r="2" fill="#00d4ff" filter="url(#glow)"/>
+    <circle cx="450" cy="100" r="2" fill="#00d4ff" filter="url(#glow)"/>
+    <circle cx="650" cy="250" r="2" fill="#00d4ff" filter="url(#glow)"/>
+    <circle cx="850" cy="180" r="2" fill="#00d4ff" filter="url(#glow)"/>
+    <circle cx="1050" cy="120" r="2" fill="#00d4ff" filter="url(#glow)"/>
+    <circle cx="1250" cy="220" r="2" fill="#00d4ff" filter="url(#glow)"/>
+    <circle cx="1450" cy="140" r="2" fill="#00d4ff" filter="url(#glow)"/>
+    <circle cx="1650" cy="200" r="2" fill="#00d4ff" filter="url(#glow)"/>
+    <circle cx="1850" cy="160" r="2" fill="#00d4ff" filter="url(#glow)"/>
+  </g>
+</svg>
