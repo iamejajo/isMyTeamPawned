@@ -59,16 +59,19 @@
             border: 1px solid rgba(0, 212, 255, 0.2);
             backdrop-filter: blur(10px);
             transition: all 0.3s ease;
+            box-shadow: 0 0 20px rgba(0, 212, 255, 0.08);
         }
 
         .pricing-card:hover {
             border-color: #00d4ff;
             transform: translateY(-5px);
+            box-shadow: 0 0 30px rgba(0, 212, 255, 0.15), 0 10px 30px rgba(0, 0, 0, 0.3);
         }
 
         .pricing-card.featured {
             background: rgba(0, 212, 255, 0.1);
             border-color: #00d4ff;
+            box-shadow: 0 0 25px rgba(0, 212, 255, 0.12);
         }
 
         .stats-bar {
@@ -84,9 +87,32 @@
         .circuit-section {
             background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.3) 20%, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0.3) 80%, transparent 100%);
         }
+
+        /* Spotlight effect for center content */
+        .spotlight {
+            background: radial-gradient(ellipse at center, rgba(0, 212, 255, 0.2) 0%, rgba(0, 212, 255, 0.1) 30%, rgba(0, 212, 255, 0.05) 50%, transparent 70%);
+        }
+
+        /* Dark corners effect */
+        .dark-corners {
+            background: radial-gradient(ellipse at center, transparent 0%, rgba(0, 0, 0, 0.3) 50%, rgba(0, 0, 0, 0.8) 100%);
+        }
+
+        /* Content illumination */
+        .content-glow {
+            /* Removed box-shadow to eliminate boxy appearance */
+        }
+
+        /* Pricing section spotlight */
+        .pricing-spotlight {
+            background: radial-gradient(ellipse at center, rgba(0, 212, 255, 0.15) 0%, rgba(0, 212, 255, 0.08) 40%, transparent 70%);
+        }
     </style>
 </head>
 <body class="bg-black text-white min-h-screen">
+    <!-- Dark corners overlay -->
+    <div class="fixed inset-0 dark-corners pointer-events-none z-0"></div>
+
     <!-- Navigation -->
     <nav class="relative z-10 bg-black bg-opacity-90 backdrop-blur-sm border-b border-gray-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -113,6 +139,9 @@
 
         <!-- Solid background overlay with gradient -->
         <div class="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black"></div>
+
+        <!-- Spotlight effect for center content -->
+        <div class="absolute inset-0 spotlight pointer-events-none"></div>
 
         <!-- Content -->
         <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16 text-center">
@@ -154,6 +183,9 @@
 
     <!-- Pricing Section with solid background -->
     <div class="bg-black relative">
+        <!-- Pricing section spotlight -->
+        <div class="absolute inset-0 pricing-spotlight pointer-events-none"></div>
+
         <!-- Pricing Toggle -->
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-8 text-center">
             <div class="toggle-switch">
