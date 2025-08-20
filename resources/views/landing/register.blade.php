@@ -3,86 +3,149 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register - IsMyTeamPwned</title>
+    <title>Register - TEAMPWNED</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .bg-circuit {
+            background-image: url('/images/background.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .spotlight {
+            background: radial-gradient(ellipse at center, rgba(0, 212, 255, 0.15) 0%, rgba(0, 212, 255, 0.08) 40%, transparent 70%);
+        }
+
+        .dark-corners {
+            background: radial-gradient(ellipse at center, transparent 0%, rgba(0, 0, 0, 0.3) 50%, rgba(0, 0, 0, 0.8) 100%);
+        }
+
+        .register-card {
+            background: linear-gradient(145deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2));
+            border: 1px solid rgba(0, 212, 255, 0.15);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        .btn-glow:hover {
+            box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+        }
+    </style>
 </head>
-<body class="bg-gray-50">
-    <div class="min-h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
-        <div class="max-w-md w-full space-y-8">
-            <div>
-                <div class="mx-auto h-12 w-12 flex items-center justify-center rounded-full bg-blue-100">
-                    <i class="fas fa-shield-alt text-blue-600 text-xl"></i>
-                </div>
-                <h2 class="mt-6 text-center text-3xl font-extrabold text-gray-900">
-                    Create your account
-                </h2>
-                <p class="mt-2 text-center text-sm text-gray-600">
-                    Start protecting your team from data breaches
-                </p>
-            </div>
+<body class="bg-black text-white min-h-screen">
+    <!-- Dark corners overlay -->
+    <div class="fixed inset-0 dark-corners pointer-events-none z-0"></div>
 
-            <form class="mt-8 space-y-6" action="{{ route('register.store') }}" method="POST">
-                @csrf
+    <!-- Spotlight effect -->
+    <div class="fixed inset-0 spotlight pointer-events-none"></div>
 
-                @if ($errors->any())
-                    <div class="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded">
-                        <ul class="list-disc list-inside">
-                            @foreach ($errors->all() as $error)
-                                <li>{{ $error }}</li>
-                            @endforeach
-                        </ul>
-                    </div>
-                @endif
-
-                <div class="rounded-md shadow-sm -space-y-px">
-                    <div>
-                        <label for="name" class="sr-only">Full Name</label>
-                        <input id="name" name="name" type="text" required
-                               class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:text-sm"
-                               placeholder="Full Name" value="{{ old('name') }}">
-                    </div>
-                    <div>
-                        <label for="email" class="sr-only">Email address</label>
-                        <input id="email" name="email" type="email" autocomplete="email" required
-                               class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:text-sm"
-                               placeholder="Email address" value="{{ old('email') }}">
-                    </div>
-                    <div>
-                        <label for="organization_name" class="sr-only">Company Name</label>
-                        <input id="organization_name" name="organization_name" type="text" required
-                               class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:text-sm"
-                               placeholder="Company Name" value="{{ old('organization_name') }}">
-                    </div>
-                    <div>
-                        <label for="password" class="sr-only">Password</label>
-                        <input id="password" name="password" type="password" autocomplete="new-password" required
-                               class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:text-sm"
-                               placeholder="Password">
-                    </div>
-                    <div>
-                        <label for="password_confirmation" class="sr-only">Confirm Password</label>
-                        <input id="password_confirmation" name="password_confirmation" type="password" autocomplete="new-password" required
-                               class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:text-sm"
-                               placeholder="Confirm Password">
-                    </div>
-                </div>
-
-                <div>
-                    <button type="submit"
-                            class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
-                        Create Account
-                    </button>
-                </div>
-
-                <div class="text-center">
-                    <p class="text-sm text-gray-600">
-                        Already have an account?
-                        <a href="{{ route('login') }}" class="font-medium text-blue-600 hover:text-blue-500">
-                            Sign in
+    <!-- Navigation -->
+    <nav class="relative z-10 bg-black bg-opacity-20 backdrop-blur-sm border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <a href="{{ route('home') }}">
+                            <img src="/images/logo.svg" alt="TEAMPWNED" class="h-8">
                         </a>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-6">
+                    <a href="#" class="text-white hover:text-cyan-400 transition-colors">News</a>
+                    <a href="#" class="text-white hover:text-cyan-400 transition-colors">Breach</a>
+                    <a href="{{ route('login') }}" class="text-white hover:text-cyan-400 transition-colors">Login</a>
+                    <a href="{{ route('register') }}" class="bg-cyan-500 hover:bg-cyan-600 text-white px-4 py-2 rounded-md text-sm font-medium transition-all btn-glow">Register</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="min-h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="max-w-md w-full space-y-8">
+            <div class="register-card rounded-xl p-8">
+                <div class="text-center">
+                    <div class="mx-auto h-16 w-16 flex items-center justify-center rounded-full bg-gradient-to-r from-cyan-500 to-cyan-600 mb-6">
+                        <i class="fas fa-user-plus text-white text-2xl"></i>
+                    </div>
+                    <h2 class="text-3xl font-bold text-white mb-2">
+                        Join TEAMPWNED
+                    </h2>
+                    <p class="text-gray-400">
+                        Start protecting your team from data breaches
                     </p>
                 </div>
-            </form>
+
+                <form class="mt-8 space-y-6" action="{{ route('register.store') }}" method="POST">
+                    @csrf
+
+                    @if ($errors->any())
+                        <div class="bg-red-900 bg-opacity-50 border border-red-500 text-red-200 px-4 py-3 rounded-lg">
+                            <ul class="list-disc list-inside text-sm">
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
+
+                    <div class="space-y-4">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-300 mb-2">Full Name</label>
+                            <input id="name" name="name" type="text" required
+                                   class="w-full px-4 py-3 bg-black bg-opacity-50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 transition-colors"
+                                   placeholder="Enter your full name" value="{{ old('name') }}">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-300 mb-2">Email Address</label>
+                            <input id="email" name="email" type="email" autocomplete="email" required
+                                   class="w-full px-4 py-3 bg-black bg-opacity-50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 transition-colors"
+                                   placeholder="Enter your email" value="{{ old('email') }}">
+                        </div>
+                        <div>
+                            <label for="organization_name" class="block text-sm font-medium text-gray-300 mb-2">Company Name</label>
+                            <input id="organization_name" name="organization_name" type="text" required
+                                   class="w-full px-4 py-3 bg-black bg-opacity-50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 transition-colors"
+                                   placeholder="Enter your company name" value="{{ old('organization_name') }}">
+                        </div>
+                        <div>
+                            <label for="password" class="block text-sm font-medium text-gray-300 mb-2">Password</label>
+                            <input id="password" name="password" type="password" autocomplete="new-password" required
+                                   class="w-full px-4 py-3 bg-black bg-opacity-50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 transition-colors"
+                                   placeholder="Create a password">
+                        </div>
+                        <div>
+                            <label for="password_confirmation" class="block text-sm font-medium text-gray-300 mb-2">Confirm Password</label>
+                            <input id="password_confirmation" name="password_confirmation" type="password" autocomplete="new-password" required
+                                   class="w-full px-4 py-3 bg-black bg-opacity-50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 transition-colors"
+                                   placeholder="Confirm your password">
+                        </div>
+                    </div>
+
+                    <div>
+                        <button type="submit"
+                                class="w-full py-3 bg-gradient-to-r from-cyan-500 to-cyan-600 hover:from-cyan-600 hover:to-cyan-700 text-white rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 btn-glow">
+                            Create Account
+                        </button>
+                    </div>
+
+                    <div class="text-center">
+                        <p class="text-sm text-gray-400">
+                            Already have an account?
+                            <a href="{{ route('login') }}" class="font-medium text-cyan-400 hover:text-cyan-300 transition-colors">
+                                Sign in
+                            </a>
+                        </p>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
 </body>

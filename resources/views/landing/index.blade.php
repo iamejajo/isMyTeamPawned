@@ -29,28 +29,37 @@
         }
 
         .toggle-switch {
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 25px;
+            background: rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            border-radius: 12px;
             padding: 4px;
             display: inline-flex;
             position: relative;
+            backdrop-filter: blur(10px);
         }
 
         .toggle-option {
-            padding: 8px 16px;
-            border-radius: 20px;
+            padding: 10px 20px;
+            border-radius: 8px;
             cursor: pointer;
             transition: all 0.3s ease;
             position: relative;
             z-index: 2;
+            font-weight: 500;
+            font-size: 0.9rem;
         }
 
         .toggle-option.active {
-            background: #00d4ff;
+            background: linear-gradient(135deg, #00d4ff, #0099cc);
             color: white;
+            box-shadow: 0 4px 15px rgba(0, 212, 255, 0.3);
         }
 
         .toggle-option:not(.active) {
+            color: #9ca3af;
+        }
+
+        .toggle-option:not(.active):hover {
             color: white;
         }
 
@@ -237,7 +246,7 @@
             <!-- PRO Card -->
             <div class="pricing-card rounded-xl p-8">
                 <div class="pricing-badge">PRO</div>
-                <div class="pricing-price mb-4">3000 BIRR<span class="text-lg text-gray-400">/month</span></div>
+                <div class="pricing-price mb-4">$29<span class="text-lg text-gray-400">/month</span></div>
                 <hr class="border-gray-600 mb-6">
                 <ul class="text-gray-300 space-y-3 text-sm mb-8">
                     <li class="flex items-center"><span class="text-cyan-400 mr-2">✓</span>Email monitoring</li>
@@ -253,7 +262,7 @@
             <!-- PRO PLUS Card -->
             <div class="pricing-card rounded-xl p-8">
                 <div class="pricing-badge">PRO PLUS</div>
-                <div class="pricing-price mb-4">5000 BIRR<span class="text-lg text-gray-400">/month</span></div>
+                <div class="pricing-price mb-4">$49<span class="text-lg text-gray-400">/month</span></div>
                 <hr class="border-gray-600 mb-6">
                 <ul class="text-gray-300 space-y-3 text-sm mb-8">
                     <li class="flex items-center"><span class="text-cyan-400 mr-2">✓</span>Everything in PRO</li>
@@ -268,7 +277,7 @@
             </div>
 
             <!-- Custom Card -->
-            <div class="pricing-card featured rounded-xl p-8">
+            <div class="pricing-card rounded-xl p-8">
                 <div class="pricing-badge">Custom</div>
                 <div class="pricing-price mb-4">Let's Talk!</div>
                 <hr class="border-gray-600 mb-6">
@@ -307,19 +316,25 @@
             // Update pricing based on period
             if (period === 'quarterly') {
                 // Apply 10% discount
-                document.querySelectorAll('.pricing-card .text-2xl').forEach(price => {
-                    const currentPrice = price.textContent;
-                    if (currentPrice.includes('BIRR/month')) {
-                        const amount = parseInt(currentPrice.replace(' BIRR/month', ''));
+                const priceElements = document.querySelectorAll('.pricing-price');
+                priceElements.forEach((price, index) => {
+                    const currentText = price.textContent;
+                    if (currentText.includes('$')) {
+                        const amount = parseInt(currentText.replace('$', '').replace('/month', ''));
                         const discounted = Math.round(amount * 0.9);
-                        price.textContent = `${discounted} BIRR/month`;
+                        price.innerHTML = `$${discounted}<span class="text-lg text-gray-400">/month</span>`;
                     }
                 });
             } else {
                 // Reset to original prices
-                const prices = ['3000 BIRR/month', '5000 BIRR/month', 'Let\'s Talk!'];
-                document.querySelectorAll('.pricing-card .text-2xl').forEach((price, index) => {
-                    price.textContent = prices[index];
+                const priceElements = document.querySelectorAll('.pricing-price');
+                const prices = ['$29', '$49', 'Let\'s Talk!'];
+                priceElements.forEach((price, index) => {
+                    if (index < 2) {
+                        price.innerHTML = `${prices[index]}<span class="text-lg text-gray-400">/month</span>`;
+                    } else {
+                        price.textContent = prices[index];
+                    }
                 });
             }
         }
