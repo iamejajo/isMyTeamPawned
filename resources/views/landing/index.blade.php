@@ -19,6 +19,7 @@
 
         body {
             font-family: 'Inter', sans-serif;
+            overflow-x: hidden; /* Prevent horizontal scrolling */
         }
 
         .bg-circuit {
@@ -163,6 +164,19 @@
         .pricing-spotlight {
             background: radial-gradient(ellipse at center, rgba(var(--brand-rgb), 0.15) 0%, rgba(var(--brand-rgb), 0.08) 40%, transparent 70%);
         }
+
+        /* Mobile responsive fixes */
+        @media (max-width: 768px) {
+            .proof-points {
+                flex-direction: column;
+                gap: 1rem;
+                align-items: center;
+            }
+
+            .proof-points > div {
+                margin: 0;
+            }
+        }
     </style>
 </head>
 <body class="bg-black text-white min-h-screen">
@@ -226,7 +240,7 @@
 
         <!-- Content -->
         <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16 text-center">
-            <h1 class="text-6xl md:text-7xl lg:text-8xl font-black mb-4">
+            <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black mb-4">
                 <span class="text-teal-400">IS YOUR </span><span class="text-white">TEAM<span class="underline decoration-teal-400 decoration-4">PWNED</span></span>
             </h1>
 
@@ -248,13 +262,13 @@
             </div>
 
             <!-- Stats Bar -->
-            <div class="stats-bar rounded-lg p-6 mb-16">
-                <div class="flex items-center justify-between">
-                    <div class="text-left">
-                        <h3 class="text-xl font-bold text-white">PWNED Teams</h3>
+            <div class="stats-bar rounded-lg p-4 sm:p-6 mb-16">
+                <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+                    <div class="text-center sm:text-left">
+                        <h3 class="text-lg sm:text-xl font-bold text-white">PWNED Teams</h3>
                     </div>
-                    <div class="text-right">
-                        <div class="text-3xl font-bold text-white">11,662,623,00</div>
+                    <div class="text-center sm:text-right">
+                        <div class="text-2xl sm:text-3xl font-bold text-white">11,662,623,00</div>
                     </div>
                 </div>
             </div>
@@ -269,10 +283,10 @@
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
             <!-- Value Proposition -->
             <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6">
                     Why Choose <span class="text-teal-400">TEAMPWNED</span>?
                 </h2>
-                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                <p class="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto">
                     Protect your organization with enterprise-grade security monitoring that's simple to deploy and powerful enough for the world's largest companies.
                 </p>
             </div>
@@ -315,44 +329,44 @@
 
             <!-- Statistics Section -->
             <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6">
                     Trusted by <span class="text-teal-400">Thousands</span> of Companies
                 </h2>
-                <p class="text-xl text-gray-300 max-w-3xl mx-auto mb-12">
+                <p class="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto mb-12">
                     Join the growing community of security-conscious organizations protecting their teams from data breaches.
                 </p>
             </div>
 
             <!-- Statistics Grid -->
-            <div class="grid md:grid-cols-4 gap-8 mb-16">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-8 mb-16">
                 <!-- Stat 1 -->
-                <div class="text-center p-6">
-                    <div class="text-4xl font-bold text-teal-400 mb-2">500+</div>
-                    <div class="text-gray-300 text-sm font-medium">Companies Protected</div>
+                <div class="text-center p-4 sm:p-6">
+                    <div class="text-3xl sm:text-4xl font-bold text-teal-400 mb-2">500+</div>
+                    <div class="text-gray-300 text-xs sm:text-sm font-medium">Companies Protected</div>
                 </div>
 
                 <!-- Stat 2 -->
-                <div class="text-center p-6">
-                    <div class="text-4xl font-bold text-teal-400 mb-2">50K+</div>
-                    <div class="text-gray-300 text-sm font-medium">Email Addresses Monitored</div>
+                <div class="text-center p-4 sm:p-6">
+                    <div class="text-3xl sm:text-4xl font-bold text-teal-400 mb-2">50K+</div>
+                    <div class="text-gray-300 text-xs sm:text-sm font-medium">Email Addresses Monitored</div>
                 </div>
 
                 <!-- Stat 3 -->
-                <div class="text-center p-6">
-                    <div class="text-4xl font-bold text-teal-400 mb-2">99.9%</div>
-                    <div class="text-gray-300 text-sm font-medium">Uptime Guarantee</div>
+                <div class="text-center p-4 sm:p-6">
+                    <div class="text-3xl sm:text-4xl font-bold text-teal-400 mb-2">99.9%</div>
+                    <div class="text-gray-300 text-xs sm:text-sm font-medium">Uptime Guarantee</div>
                 </div>
 
                 <!-- Stat 4 -->
-                <div class="text-center p-6">
-                    <div class="text-4xl font-bold text-teal-400 mb-2">&lt;30s</div>
-                    <div class="text-gray-300 text-sm font-medium">Average Alert Time</div>
+                <div class="text-center p-4 sm:p-6">
+                    <div class="text-3xl sm:text-4xl font-bold text-teal-400 mb-2">&lt;30s</div>
+                    <div class="text-gray-300 text-xs sm:text-sm font-medium">Average Alert Time</div>
                 </div>
             </div>
 
             <!-- Proof Points -->
             <div class="text-center">
-                <div class="inline-flex items-center space-x-8 text-gray-400 text-sm">
+                <div class="proof-points inline-flex items-center space-x-8 text-gray-400 text-sm">
                     <div class="flex items-center">
                         <i class="fas fa-check-circle text-teal-400 mr-2"></i>
                         SOC 2 Type II Compliant
