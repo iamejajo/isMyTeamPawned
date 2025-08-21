@@ -116,46 +116,50 @@
                 <h2 class="text-3xl font-bold text-white mb-8">Featured Stories</h2>
                 <div class="grid md:grid-cols-2 gap-8">
                     <!-- Featured Article 1 -->
-                    <div class="news-card rounded-xl p-8">
-                        <div class="flex items-center mb-4">
-                            <span class="bg-red-500 text-white text-xs px-2 py-1 rounded-full mr-3">BREAKING</span>
-                            <span class="text-gray-400 text-sm">2 hours ago</span>
-                        </div>
-                        <h3 class="text-xl font-bold text-white mb-3">
-                            Major Data Breach Affects 50 Million Users
-                        </h3>
-                        <p class="text-gray-300 text-sm mb-4">
-                            A significant data breach has been reported affecting millions of users worldwide. The breach includes email addresses, passwords, and personal information...
-                        </p>
-                        <div class="flex items-center justify-between">
-                            <span class="text-teal-400 text-sm font-medium">Read More →</span>
-                            <div class="flex items-center space-x-2">
-                                <i class="fas fa-share-alt text-gray-400 text-sm"></i>
-                                <i class="fas fa-bookmark text-gray-400 text-sm"></i>
+                    <a href="{{ route('news.detail', 1) }}" class="block">
+                        <div class="news-card rounded-xl p-8 hover:border-teal-400 transition-all">
+                            <div class="flex items-center mb-4">
+                                <span class="bg-red-500 text-white text-xs px-2 py-1 rounded-full mr-3">BREAKING</span>
+                                <span class="text-gray-400 text-sm">2 hours ago</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-3">
+                                Major Data Breach Affects 50 Million Users
+                            </h3>
+                            <p class="text-gray-300 text-sm mb-4">
+                                A significant data breach has been reported affecting millions of users worldwide. The breach includes email addresses, passwords, and personal information...
+                            </p>
+                            <div class="flex items-center justify-between">
+                                <span class="text-teal-400 text-sm font-medium">Read More →</span>
+                                <div class="flex items-center space-x-2">
+                                    <i class="fas fa-share-alt text-gray-400 text-sm"></i>
+                                    <i class="fas fa-bookmark text-gray-400 text-sm"></i>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    </a>
 
                     <!-- Featured Article 2 -->
-                    <div class="news-card rounded-xl p-8">
-                        <div class="flex items-center mb-4">
-                            <span class="bg-yellow-500 text-white text-xs px-2 py-1 rounded-full mr-3">ALERT</span>
-                            <span class="text-gray-400 text-sm">5 hours ago</span>
-                        </div>
-                        <h3 class="text-xl font-bold text-white mb-3">
-                            New Phishing Campaign Targets Corporate Email
-                        </h3>
-                        <p class="text-gray-300 text-sm mb-4">
-                            Security researchers have identified a sophisticated phishing campaign specifically targeting corporate email accounts with advanced social engineering tactics...
-                        </p>
-                        <div class="flex items-center justify-between">
-                            <span class="text-teal-400 text-sm font-medium">Read More →</span>
-                            <div class="flex items-center space-x-2">
-                                <i class="fas fa-share-alt text-gray-400 text-sm"></i>
-                                <i class="fas fa-bookmark text-gray-400 text-sm"></i>
+                    <a href="{{ route('news.detail', 2) }}" class="block">
+                        <div class="news-card rounded-xl p-8 hover:border-teal-400 transition-all">
+                            <div class="flex items-center mb-4">
+                                <span class="bg-yellow-500 text-white text-xs px-2 py-1 rounded-full mr-3">ALERT</span>
+                                <span class="text-gray-400 text-sm">5 hours ago</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-3">
+                                New Phishing Campaign Targets Corporate Email
+                            </h3>
+                            <p class="text-gray-300 text-sm mb-4">
+                                Security researchers have identified a sophisticated phishing campaign specifically targeting corporate email accounts with advanced social engineering tactics...
+                            </p>
+                            <div class="flex items-center justify-between">
+                                <span class="text-teal-400 text-sm font-medium">Read More →</span>
+                                <div class="flex items-center space-x-2">
+                                    <i class="fas fa-share-alt text-gray-400 text-sm"></i>
+                                    <i class="fas fa-bookmark text-gray-400 text-sm"></i>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
             </div>
 
@@ -164,76 +168,88 @@
                 <h2 class="text-3xl font-bold text-white mb-8">Recent Updates</h2>
                 <div class="grid md:grid-cols-3 gap-6">
                     <!-- News Item 1 -->
-                    <div class="news-card rounded-xl p-6">
-                        <span class="text-gray-400 text-sm">1 day ago</span>
-                        <h3 class="text-lg font-bold text-white mb-2 mt-2">
-                            Zero-Day Vulnerability Discovered in Popular Software
-                        </h3>
-                        <p class="text-gray-300 text-xs mb-3">
-                            A critical zero-day vulnerability has been discovered that affects millions of users...
-                        </p>
-                        <span class="text-teal-400 text-sm font-medium">Read More →</span>
-                    </div>
+                    <a href="{{ route('news.detail', 3) }}" class="block">
+                        <div class="news-card rounded-xl p-6 hover:border-teal-400 transition-all">
+                            <span class="text-gray-400 text-sm">1 day ago</span>
+                            <h3 class="text-lg font-bold text-white mb-2 mt-2">
+                                Zero-Day Vulnerability Discovered in Popular Software
+                            </h3>
+                            <p class="text-gray-300 text-xs mb-3">
+                                A critical zero-day vulnerability has been discovered that affects millions of users...
+                            </p>
+                            <span class="text-teal-400 text-sm font-medium">Read More →</span>
+                        </div>
+                    </a>
 
                     <!-- News Item 2 -->
-                    <div class="news-card rounded-xl p-6">
-                        <span class="text-gray-400 text-sm">2 days ago</span>
-                        <h3 class="text-lg font-bold text-white mb-2 mt-2">
-                            Government Agencies Issue Cybersecurity Guidelines
-                        </h3>
-                        <p class="text-gray-300 text-xs mb-3">
-                            New cybersecurity guidelines have been issued for organizations handling sensitive data...
-                        </p>
-                        <span class="text-teal-400 text-sm font-medium">Read More →</span>
-                    </div>
+                    <a href="{{ route('news.detail', 4) }}" class="block">
+                        <div class="news-card rounded-xl p-6 hover:border-teal-400 transition-all">
+                            <span class="text-gray-400 text-sm">2 days ago</span>
+                            <h3 class="text-lg font-bold text-white mb-2 mt-2">
+                                Government Agencies Issue Cybersecurity Guidelines
+                            </h3>
+                            <p class="text-gray-300 text-xs mb-3">
+                                New cybersecurity guidelines have been issued for organizations handling sensitive data...
+                            </p>
+                            <span class="text-teal-400 text-sm font-medium">Read More →</span>
+                        </div>
+                    </a>
 
                     <!-- News Item 3 -->
-                    <div class="news-card rounded-xl p-6">
-                        <span class="text-gray-400 text-sm">3 days ago</span>
-                        <h3 class="text-lg font-bold text-white mb-2 mt-2">
-                            Ransomware Attacks on Healthcare Sector Increase
-                        </h3>
-                        <p class="text-gray-300 text-xs mb-3">
-                            Healthcare organizations are experiencing a surge in ransomware attacks...
-                        </p>
-                        <span class="text-teal-400 text-sm font-medium">Read More →</span>
-                    </div>
+                    <a href="{{ route('news.detail', 5) }}" class="block">
+                        <div class="news-card rounded-xl p-6 hover:border-teal-400 transition-all">
+                            <span class="text-gray-400 text-sm">3 days ago</span>
+                            <h3 class="text-lg font-bold text-white mb-2 mt-2">
+                                Ransomware Attacks on Healthcare Sector Increase
+                            </h3>
+                            <p class="text-gray-300 text-xs mb-3">
+                                Healthcare organizations are experiencing a surge in ransomware attacks...
+                            </p>
+                            <span class="text-teal-400 text-sm font-medium">Read More →</span>
+                        </div>
+                    </a>
 
                     <!-- News Item 4 -->
-                    <div class="news-card rounded-xl p-6">
-                        <span class="text-gray-400 text-sm">4 days ago</span>
-                        <h3 class="text-lg font-bold text-white mb-2 mt-2">
-                            New AI-Powered Security Tools Released
-                        </h3>
-                        <p class="text-gray-300 text-xs mb-3">
-                            Several companies have released new AI-powered security monitoring tools...
-                        </p>
-                        <span class="text-teal-400 text-sm font-medium">Read More →</span>
-                    </div>
+                    <a href="{{ route('news.detail', 6) }}" class="block">
+                        <div class="news-card rounded-xl p-6 hover:border-teal-400 transition-all">
+                            <span class="text-gray-400 text-sm">4 days ago</span>
+                            <h3 class="text-lg font-bold text-white mb-2 mt-2">
+                                New AI-Powered Security Tools Released
+                            </h3>
+                            <p class="text-gray-300 text-xs mb-3">
+                                Several companies have released new AI-powered security monitoring tools...
+                            </p>
+                            <span class="text-teal-400 text-sm font-medium">Read More →</span>
+                        </div>
+                    </a>
 
                     <!-- News Item 5 -->
-                    <div class="news-card rounded-xl p-6">
-                        <span class="text-gray-400 text-sm">5 days ago</span>
-                        <h3 class="text-lg font-bold text-white mb-2 mt-2">
-                            Cryptocurrency Exchange Security Breach
-                        </h3>
-                        <p class="text-gray-300 text-xs mb-3">
-                            A major cryptocurrency exchange has reported a security breach affecting user funds...
-                        </p>
-                        <span class="text-teal-400 text-sm font-medium">Read More →</span>
-                    </div>
+                    <a href="{{ route('news.detail', 7) }}" class="block">
+                        <div class="news-card rounded-xl p-6 hover:border-teal-400 transition-all">
+                            <span class="text-gray-400 text-sm">5 days ago</span>
+                            <h3 class="text-lg font-bold text-white mb-2 mt-2">
+                                Cryptocurrency Exchange Security Breach
+                            </h3>
+                            <p class="text-gray-300 text-xs mb-3">
+                                A major cryptocurrency exchange has reported a security breach affecting user funds...
+                            </p>
+                            <span class="text-teal-400 text-sm font-medium">Read More →</span>
+                        </div>
+                    </a>
 
                     <!-- News Item 6 -->
-                    <div class="news-card rounded-xl p-6">
-                        <span class="text-gray-400 text-sm">1 week ago</span>
-                        <h3 class="text-lg font-bold text-white mb-2 mt-2">
-                            IoT Device Vulnerabilities Exposed
-                        </h3>
-                        <p class="text-gray-300 text-xs mb-3">
-                            Researchers have discovered critical vulnerabilities in popular IoT devices...
-                        </p>
-                        <span class="text-teal-400 text-sm font-medium">Read More →</span>
-                    </div>
+                    <a href="{{ route('news.detail', 8) }}" class="block">
+                        <div class="news-card rounded-xl p-6 hover:border-teal-400 transition-all">
+                            <span class="text-gray-400 text-sm">1 week ago</span>
+                            <h3 class="text-lg font-bold text-white mb-2 mt-2">
+                                IoT Device Vulnerabilities Exposed
+                            </h3>
+                            <p class="text-gray-300 text-xs mb-3">
+                                Researchers have discovered critical vulnerabilities in popular IoT devices...
+                            </p>
+                            <span class="text-teal-400 text-sm font-medium">Read More →</span>
+                        </div>
+                    </a>
                 </div>
             </div>
         </div>

@@ -47,6 +47,22 @@ class LandingController extends Controller
     }
 
     /**
+     * Show the news detail page.
+     */
+    public function newsDetail($id)
+    {
+        return view('landing.news-detail');
+    }
+
+    /**
+     * Show the breach detail page.
+     */
+    public function breachDetail($id)
+    {
+        return view('landing.breach-detail');
+    }
+
+    /**
      * Show the company registration page.
      */
     public function register()

@@ -109,21 +109,8 @@
                 Breach <span class="text-teal-400">Database</span>
             </h1>
             <p class="text-xl md:text-2xl text-gray-300 mb-12 max-w-2xl mx-auto">
-                Search our comprehensive database of data breaches and security incidents.
+            All recorded leaks stored in our system.
             </p>
-
-            <!-- Search Box -->
-            <div class="max-w-2xl mx-auto mb-8">
-                <div class="search-box rounded-xl p-6">
-                    <div class="flex gap-3">
-                        <input type="text" placeholder="Search for company, domain, or breach name..."
-                               class="flex-1 px-4 py-3 bg-black bg-opacity-50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-teal-400 focus:ring-1 focus:ring-teal-400">
-                        <button class="px-6 py-3 bg-teal-700 hover:bg-teal-800 text-white rounded-lg font-medium transition-all btn-glow">
-                            <i class="fas fa-search mr-2"></i>Search
-                        </button>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
 
@@ -180,180 +167,196 @@
                     <!-- Table Body -->
                     <div class="divide-y divide-gray-700">
                         <!-- Row 1 -->
-                        <div class="px-6 py-4 hover:bg-gray-800/30 transition-colors">
-                            <div class="grid grid-cols-3 gap-4 items-center">
-                                <div class="flex items-center space-x-3">
-                                    <div class="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center">
-                                        <i class="fas fa-exclamation-triangle text-white text-xs"></i>
+                        <a href="{{ route('breach.detail', 1) }}" class="block hover:bg-gray-800/30 transition-colors">
+                            <div class="px-6 py-4">
+                                <div class="grid grid-cols-3 gap-4 items-center">
+                                    <div class="flex items-center space-x-3">
+                                        <div class="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center">
+                                            <i class="fas fa-exclamation-triangle text-white text-xs"></i>
+                                        </div>
+                                        <div>
+                                            <div class="text-white font-medium">TechCorp Inc</div>
+                                            <div class="text-gray-400 text-xs">Technology</div>
+                                        </div>
                                     </div>
-                                    <div>
-                                        <div class="text-white font-medium">TechCorp Inc</div>
-                                        <div class="text-gray-400 text-xs">Technology</div>
+                                    <div class="text-center">
+                                        <span class="text-red-400 font-bold">15.2M</span>
+                                        <div class="text-gray-400 text-xs">records</div>
                                     </div>
-                                </div>
-                                <div class="text-center">
-                                    <span class="text-red-400 font-bold">15.2M</span>
-                                    <div class="text-gray-400 text-xs">records</div>
-                                </div>
-                                <div class="text-right text-gray-300 text-sm">
-                                    Dec 15, 2023
+                                    <div class="text-right text-gray-300 text-sm">
+                                        Dec 15, 2023
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                        </a>
 
                         <!-- Row 2 -->
-                        <div class="px-6 py-4 hover:bg-gray-800/30 transition-colors">
-                            <div class="grid grid-cols-3 gap-4 items-center">
-                                <div class="flex items-center space-x-3">
-                                    <div class="w-8 h-8 bg-orange-500 rounded-full flex items-center justify-center">
-                                        <i class="fas fa-exclamation-triangle text-white text-xs"></i>
+                        <a href="{{ route('breach.detail', 2) }}" class="block hover:bg-gray-800/30 transition-colors">
+                            <div class="px-6 py-4">
+                                <div class="grid grid-cols-3 gap-4 items-center">
+                                    <div class="flex items-center space-x-3">
+                                        <div class="w-8 h-8 bg-orange-500 rounded-full flex items-center justify-center">
+                                            <i class="fas fa-exclamation-triangle text-white text-xs"></i>
+                                        </div>
+                                        <div>
+                                            <div class="text-white font-medium">FinanceBank</div>
+                                            <div class="text-gray-400 text-xs">Financial Services</div>
+                                        </div>
                                     </div>
-                                    <div>
-                                        <div class="text-white font-medium">FinanceBank</div>
-                                        <div class="text-gray-400 text-xs">Financial Services</div>
+                                    <div class="text-center">
+                                        <span class="text-orange-400 font-bold">2.8M</span>
+                                        <div class="text-gray-400 text-xs">records</div>
                                     </div>
-                                </div>
-                                <div class="text-center">
-                                    <span class="text-orange-400 font-bold">2.8M</span>
-                                    <div class="text-gray-400 text-xs">records</div>
-                                </div>
-                                <div class="text-right text-gray-300 text-sm">
-                                    Nov 28, 2023
+                                    <div class="text-right text-gray-300 text-sm">
+                                        Nov 28, 2023
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                        </a>
 
                         <!-- Row 3 -->
-                        <div class="px-6 py-4 hover:bg-gray-800/30 transition-colors">
-                            <div class="grid grid-cols-3 gap-4 items-center">
-                                <div class="flex items-center space-x-3">
-                                    <div class="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center">
-                                        <i class="fas fa-exclamation-triangle text-white text-xs"></i>
+                        <a href="{{ route('breach.detail', 3) }}" class="block hover:bg-gray-800/30 transition-colors">
+                            <div class="px-6 py-4">
+                                <div class="grid grid-cols-3 gap-4 items-center">
+                                    <div class="flex items-center space-x-3">
+                                        <div class="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center">
+                                            <i class="fas fa-exclamation-triangle text-white text-xs"></i>
+                                        </div>
+                                        <div>
+                                            <div class="text-white font-medium">SocialMedia Platform</div>
+                                            <div class="text-gray-400 text-xs">Social Media</div>
+                                        </div>
                                     </div>
-                                    <div>
-                                        <div class="text-white font-medium">SocialMedia Platform</div>
-                                        <div class="text-gray-400 text-xs">Social Media</div>
+                                    <div class="text-center">
+                                        <span class="text-red-400 font-bold">250M</span>
+                                        <div class="text-gray-400 text-xs">records</div>
                                     </div>
-                                </div>
-                                <div class="text-center">
-                                    <span class="text-red-400 font-bold">250M</span>
-                                    <div class="text-gray-400 text-xs">records</div>
-                                </div>
-                                <div class="text-right text-gray-300 text-sm">
-                                    Oct 12, 2023
+                                    <div class="text-right text-gray-300 text-sm">
+                                        Oct 12, 2023
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                        </a>
 
                         <!-- Row 4 -->
-                        <div class="px-6 py-4 hover:bg-gray-800/30 transition-colors">
-                            <div class="grid grid-cols-3 gap-4 items-center">
-                                <div class="flex items-center space-x-3">
-                                    <div class="w-8 h-8 bg-yellow-500 rounded-full flex items-center justify-center">
-                                        <i class="fas fa-exclamation-triangle text-white text-xs"></i>
+                        <a href="{{ route('breach.detail', 4) }}" class="block hover:bg-gray-800/30 transition-colors">
+                            <div class="px-6 py-4">
+                                <div class="grid grid-cols-3 gap-4 items-center">
+                                    <div class="flex items-center space-x-3">
+                                        <div class="w-8 h-8 bg-yellow-500 rounded-full flex items-center justify-center">
+                                            <i class="fas fa-exclamation-triangle text-white text-xs"></i>
+                                        </div>
+                                        <div>
+                                            <div class="text-white font-medium">CloudProvider</div>
+                                            <div class="text-gray-400 text-xs">Cloud Services</div>
+                                        </div>
                                     </div>
-                                    <div>
-                                        <div class="text-white font-medium">CloudProvider</div>
-                                        <div class="text-gray-400 text-xs">Cloud Services</div>
+                                    <div class="text-center">
+                                        <span class="text-yellow-400 font-bold">100M</span>
+                                        <div class="text-gray-400 text-xs">records</div>
                                     </div>
-                                </div>
-                                <div class="text-center">
-                                    <span class="text-yellow-400 font-bold">100M</span>
-                                    <div class="text-gray-400 text-xs">records</div>
-                                </div>
-                                <div class="text-right text-gray-300 text-sm">
-                                    Sep 05, 2023
+                                    <div class="text-right text-gray-300 text-sm">
+                                        Sep 05, 2023
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                        </a>
 
                         <!-- Row 5 -->
-                        <div class="px-6 py-4 hover:bg-gray-800/30 transition-colors">
-                            <div class="grid grid-cols-3 gap-4 items-center">
-                                <div class="flex items-center space-x-3">
-                                    <div class="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center">
-                                        <i class="fas fa-exclamation-triangle text-white text-xs"></i>
+                        <a href="{{ route('breach.detail', 5) }}" class="block hover:bg-gray-800/30 transition-colors">
+                            <div class="px-6 py-4">
+                                <div class="grid grid-cols-3 gap-4 items-center">
+                                    <div class="flex items-center space-x-3">
+                                        <div class="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center">
+                                            <i class="fas fa-exclamation-triangle text-white text-xs"></i>
+                                        </div>
+                                        <div>
+                                            <div class="text-white font-medium">E-commerce Giant</div>
+                                            <div class="text-gray-400 text-xs">Retail</div>
+                                        </div>
                                     </div>
-                                    <div>
-                                        <div class="text-white font-medium">E-commerce Giant</div>
-                                        <div class="text-gray-400 text-xs">Retail</div>
+                                    <div class="text-center">
+                                        <span class="text-red-400 font-bold">75M</span>
+                                        <div class="text-gray-400 text-xs">records</div>
                                     </div>
-                                </div>
-                                <div class="text-center">
-                                    <span class="text-red-400 font-bold">75M</span>
-                                    <div class="text-gray-400 text-xs">records</div>
-                                </div>
-                                <div class="text-right text-gray-300 text-sm">
-                                    Aug 22, 2023
+                                    <div class="text-right text-gray-300 text-sm">
+                                        Aug 22, 2023
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                        </a>
 
                         <!-- Row 6 -->
-                        <div class="px-6 py-4 hover:bg-gray-800/30 transition-colors">
-                            <div class="grid grid-cols-3 gap-4 items-center">
-                                <div class="flex items-center space-x-3">
-                                    <div class="w-8 h-8 bg-orange-500 rounded-full flex items-center justify-center">
-                                        <i class="fas fa-exclamation-triangle text-white text-xs"></i>
+                        <a href="{{ route('breach.detail', 6) }}" class="block hover:bg-gray-800/30 transition-colors">
+                            <div class="px-6 py-4">
+                                <div class="grid grid-cols-3 gap-4 items-center">
+                                    <div class="flex items-center space-x-3">
+                                        <div class="w-8 h-8 bg-orange-500 rounded-full flex items-center justify-center">
+                                            <i class="fas fa-exclamation-triangle text-white text-xs"></i>
+                                        </div>
+                                        <div>
+                                            <div class="text-white font-medium">Healthcare Network</div>
+                                            <div class="text-gray-400 text-xs">Healthcare</div>
+                                        </div>
                                     </div>
-                                    <div>
-                                        <div class="text-white font-medium">Healthcare Network</div>
-                                        <div class="text-gray-400 text-xs">Healthcare</div>
+                                    <div class="text-center">
+                                        <span class="text-orange-400 font-bold">8.5M</span>
+                                        <div class="text-gray-400 text-xs">records</div>
                                     </div>
-                                </div>
-                                <div class="text-center">
-                                    <span class="text-orange-400 font-bold">8.5M</span>
-                                    <div class="text-gray-400 text-xs">records</div>
-                                </div>
-                                <div class="text-right text-gray-300 text-sm">
-                                    Jul 18, 2023
+                                    <div class="text-right text-gray-300 text-sm">
+                                        Jul 18, 2023
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                        </a>
 
                         <!-- Row 7 -->
-                        <div class="px-6 py-4 hover:bg-gray-800/30 transition-colors">
-                            <div class="grid grid-cols-3 gap-4 items-center">
-                                <div class="flex items-center space-x-3">
-                                    <div class="w-8 h-8 bg-yellow-500 rounded-full flex items-center justify-center">
-                                        <i class="fas fa-exclamation-triangle text-white text-xs"></i>
+                        <a href="{{ route('breach.detail', 7) }}" class="block hover:bg-gray-800/30 transition-colors">
+                            <div class="px-6 py-4">
+                                <div class="grid grid-cols-3 gap-4 items-center">
+                                    <div class="flex items-center space-x-3">
+                                        <div class="w-8 h-8 bg-yellow-500 rounded-full flex items-center justify-center">
+                                            <i class="fas fa-exclamation-triangle text-white text-xs"></i>
+                                        </div>
+                                        <div>
+                                            <div class="text-white font-medium">Gaming Studio</div>
+                                            <div class="text-gray-400 text-xs">Entertainment</div>
+                                        </div>
                                     </div>
-                                    <div>
-                                        <div class="text-white font-medium">Gaming Studio</div>
-                                        <div class="text-gray-400 text-xs">Entertainment</div>
+                                    <div class="text-center">
+                                        <span class="text-yellow-400 font-bold">12M</span>
+                                        <div class="text-gray-400 text-xs">records</div>
                                     </div>
-                                </div>
-                                <div class="text-center">
-                                    <span class="text-yellow-400 font-bold">12M</span>
-                                    <div class="text-gray-400 text-xs">records</div>
-                                </div>
-                                <div class="text-right text-gray-300 text-sm">
-                                    Jun 30, 2023
+                                    <div class="text-right text-gray-300 text-sm">
+                                        Jun 30, 2023
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                        </a>
 
                         <!-- Row 8 -->
-                        <div class="px-6 py-4 hover:bg-gray-800/30 transition-colors">
-                            <div class="grid grid-cols-3 gap-4 items-center">
-                                <div class="flex items-center space-x-3">
-                                    <div class="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center">
-                                        <i class="fas fa-exclamation-triangle text-white text-xs"></i>
+                        <a href="{{ route('breach.detail', 8) }}" class="block hover:bg-gray-800/30 transition-colors">
+                            <div class="px-6 py-4">
+                                <div class="grid grid-cols-3 gap-4 items-center">
+                                    <div class="flex items-center space-x-3">
+                                        <div class="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center">
+                                            <i class="fas fa-exclamation-triangle text-white text-xs"></i>
+                                        </div>
+                                        <div>
+                                            <div class="text-white font-medium">Telecom Provider</div>
+                                            <div class="text-gray-400 text-xs">Telecommunications</div>
+                                        </div>
                                     </div>
-                                    <div>
-                                        <div class="text-white font-medium">Telecom Provider</div>
-                                        <div class="text-gray-400 text-xs">Telecommunications</div>
+                                    <div class="text-center">
+                                        <span class="text-red-400 font-bold">45M</span>
+                                        <div class="text-gray-400 text-xs">records</div>
                                     </div>
-                                </div>
-                                <div class="text-center">
-                                    <span class="text-red-400 font-bold">45M</span>
-                                    <div class="text-gray-400 text-xs">records</div>
-                                </div>
-                                <div class="text-right text-gray-300 text-sm">
-                                    May 14, 2023
+                                    <div class="text-right text-gray-300 text-sm">
+                                        May 14, 2023
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                        </a>
                     </div>
                 </div>
 
