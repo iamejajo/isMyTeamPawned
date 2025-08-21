@@ -23,6 +23,30 @@ class LandingController extends Controller
     }
 
     /**
+     * Show the pricing page.
+     */
+    public function pricing()
+    {
+        return view('landing.pricing');
+    }
+
+    /**
+     * Show the news page.
+     */
+    public function news()
+    {
+        return view('landing.news');
+    }
+
+    /**
+     * Show the breach database page.
+     */
+    public function breach()
+    {
+        return view('landing.breach');
+    }
+
+    /**
      * Show the company registration page.
      */
     public function register()

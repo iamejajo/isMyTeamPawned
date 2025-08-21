@@ -69,8 +69,10 @@
                     </div>
                 </div>
                 <div class="flex items-center space-x-6">
-                    <a href="#" class="text-white hover:text-teal-400 transition-colors">News</a>
-                    <a href="#" class="text-white hover:text-teal-400 transition-colors">Breach</a>
+                    <a href="{{ route('home') }}" class="text-white hover:text-teal-400 transition-colors">Home</a>
+                    <a href="{{ route('news') }}" class="text-white hover:text-teal-400 transition-colors">News</a>
+                    <a href="{{ route('breach') }}" class="text-white hover:text-teal-400 transition-colors">Breach</a>
+                    <a href="{{ route('pricing') }}" class="text-white hover:text-teal-400 transition-colors">Pricing</a>
                     <a href="{{ route('login') }}" class="text-white hover:text-teal-400 transition-colors">Login</a>
                     <a href="{{ route('register') }}" class="bg-teal-700 hover:bg-teal-800 text-white px-4 py-2 rounded-md text-sm font-medium transition-all btn-glow">Register</a>
                 </div>

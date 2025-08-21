@@ -179,8 +179,10 @@
                     </div>
                 </div>
                 <div class="flex items-center space-x-6">
-                    <a href="#" class="text-white hover:text-teal-400 transition-colors">News</a>
-                    <a href="#" class="text-white hover:text-teal-400 transition-colors">Breach</a>
+                    <a href="{{ route('home') }}" class="text-teal-400 font-medium">Home</a>
+                    <a href="{{ route('news') }}" class="text-white hover:text-teal-400 transition-colors">News</a>
+                    <a href="{{ route('breach') }}" class="text-white hover:text-teal-400 transition-colors">Breach</a>
+                    <a href="{{ route('pricing') }}" class="text-white hover:text-teal-400 transition-colors">Pricing</a>
                     <a href="{{ route('login') }}" class="text-white hover:text-teal-400 transition-colors">Login</a>
                     <a href="{{ route('register') }}" class="bg-teal-700 hover:bg-teal-800 text-white px-4 py-2 rounded-md text-sm font-medium transition-all btn-glow">Register</a>
                 </div>
@@ -206,7 +208,7 @@
             </h1>
 
             <p class="text-xl md:text-2xl text-gray-300 mb-12 max-w-2xl mx-auto">
-                Check if your email address is in a data breach.
+                Check if one of your team's email address is in a data breach.
             </p>
 
             <!-- Email Check Form -->
@@ -218,7 +220,7 @@
                     </button>
                 </div>
                 <p class="text-sm text-gray-400 mt-3">
-                    Using Have I Been Pwned is subject to the <a href="#" class="text-teal-400 hover:underline">terms of use</a>.
+                    Using IsMyTeamPwned is subject to the <a href="#" class="text-teal-400 hover:underline">terms of use</a>.
                 </p>
             </div>
 
@@ -226,7 +228,7 @@
             <div class="stats-bar rounded-lg p-6 mb-16">
                 <div class="flex items-center justify-between">
                     <div class="text-left">
-                        <h3 class="text-xl font-bold text-white">PWNED Team</h3>
+                        <h3 class="text-xl font-bold text-white">PWNED Teams</h3>
                     </div>
                     <div class="text-right">
                         <div class="text-3xl font-bold text-white">11,662,623,00</div>
@@ -236,69 +238,111 @@
         </div>
     </div>
 
-    <!-- Pricing Section with solid background -->
+    <!-- Value Proposition & Statistics Section -->
     <div class="bg-black relative">
-        <!-- Pricing section spotlight -->
+        <!-- Section spotlight -->
         <div class="absolute inset-0 pricing-spotlight pointer-events-none"></div>
 
-        <!-- Pricing Toggle -->
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-8 text-center">
-            <div class="toggle-switch">
-                <div class="toggle-option active" onclick="togglePricing('monthly')">Monthly</div>
-                <div class="toggle-option" onclick="togglePricing('quarterly')">Quarterly (save 10%)</div>
-            </div>
-        </div>
-
-        <!-- Pricing Cards -->
-        <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
-            <!-- PRO Card -->
-            <div class="pricing-card rounded-xl p-8">
-                <div class="pricing-badge">PRO</div>
-                <div class="pricing-price mb-4">$29<span class="text-lg text-gray-400">/month</span></div>
-                <hr class="border-gray-600 mb-6">
-                <ul class="text-gray-300 space-y-3 text-sm mb-8">
-                    <li class="flex items-center"><span class="text-teal-400 mr-2">✓</span>Email monitoring</li>
-                    <li class="flex items-center"><span class="text-teal-400 mr-2">✓</span>Basic alerts</li>
-                    <li class="flex items-center"><span class="text-teal-400 mr-2">✓</span>Team dashboard</li>
-                    <li class="flex items-center"><span class="text-teal-400 mr-2">✓</span>24/7 support</li>
-                </ul>
-                <button class="w-full py-3 bg-gradient-to-r from-teal-500 to-teal-600 hover:from-teal-600 hover:to-teal-700 text-white rounded-lg font-semibold transition-all duration-300 transform hover:scale-105">
-                    Get Started
-                </button>
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+            <!-- Value Proposition -->
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
+                    Why Choose <span class="text-teal-400">TEAMPWNED</span>?
+                </h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    Protect your organization with enterprise-grade security monitoring that's simple to deploy and powerful enough for the world's largest companies.
+                </p>
             </div>
 
-            <!-- PRO PLUS Card -->
-            <div class="pricing-card rounded-xl p-8">
-                <div class="pricing-badge">PRO PLUS</div>
-                <div class="pricing-price mb-4">$49<span class="text-lg text-gray-400">/month</span></div>
-                <hr class="border-gray-600 mb-6">
-                <ul class="text-gray-300 space-y-3 text-sm mb-8">
-                    <li class="flex items-center"><span class="text-teal-400 mr-2">✓</span>Everything in PRO</li>
-                    <li class="flex items-center"><span class="text-teal-400 mr-2">✓</span>Domain monitoring</li>
-                    <li class="flex items-center"><span class="text-teal-400 mr-2">✓</span>Advanced analytics</li>
-                    <li class="flex items-center"><span class="text-teal-400 mr-2">✓</span>Priority support</li>
-                    <li class="flex items-center"><span class="text-teal-400 mr-2">✓</span>Custom integrations</li>
-                </ul>
-                <button class="w-full py-3 bg-gradient-to-r from-teal-500 to-teal-600 hover:from-teal-600 hover:to-teal-700 text-white rounded-lg font-semibold transition-all duration-300 transform hover:scale-105">
-                    Get Started
-                </button>
+            <!-- Value Features Grid -->
+            <div class="grid md:grid-cols-3 gap-8 mb-20">
+                <!-- Feature 1 -->
+                <div class="text-center p-6 rounded-xl bg-gradient-to-br from-black/40 to-black/20 border border-teal-500/20 backdrop-blur-sm">
+                    <div class="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-teal-700 to-teal-800 rounded-full flex items-center justify-center">
+                        <i class="fas fa-shield-alt text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Real-Time Protection</h3>
+                    <p class="text-gray-300 text-sm">
+                        Monitor your entire team's email addresses 24/7 with instant breach detection and immediate alerts.
+                    </p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="text-center p-6 rounded-xl bg-gradient-to-br from-black/40 to-black/20 border border-teal-500/20 backdrop-blur-sm">
+                    <div class="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-teal-700 to-teal-800 rounded-full flex items-center justify-center">
+                        <i class="fas fa-chart-line text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Advanced Analytics</h3>
+                    <p class="text-gray-300 text-sm">
+                        Get detailed insights into your security posture with comprehensive reporting and trend analysis.
+                    </p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="text-center p-6 rounded-xl bg-gradient-to-br from-black/40 to-black/20 border border-teal-500/20 backdrop-blur-sm">
+                    <div class="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-teal-700 to-teal-800 rounded-full flex items-center justify-center">
+                        <i class="fas fa-users text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Team Management</h3>
+                    <p class="text-gray-300 text-sm">
+                        Easily manage team members, set permissions, and coordinate security responses across your organization.
+                    </p>
+                </div>
             </div>
 
-            <!-- Custom Card -->
-            <div class="pricing-card rounded-xl p-8">
-                <div class="pricing-badge">Custom</div>
-                <div class="pricing-price mb-4">Let's Talk!</div>
-                <hr class="border-gray-600 mb-6">
-                <ul class="text-gray-300 space-y-3 text-sm mb-8">
-                    <li class="flex items-center"><span class="text-teal-400 mr-2">✓</span>Enterprise features</li>
-                    <li class="flex items-center"><span class="text-teal-400 mr-2">✓</span>Custom integrations</li>
-                    <li class="flex items-center"><span class="text-teal-400 mr-2">✓</span>Dedicated support</li>
-                    <li class="flex items-center"><span class="text-teal-400 mr-2">✓</span>SLA guarantees</li>
-                    <li class="flex items-center"><span class="text-teal-400 mr-2">✓</span>White-label options</li>
-                </ul>
-                <button class="w-full py-3 bg-gradient-to-r from-teal-500 to-teal-600 hover:from-teal-600 hover:to-teal-700 text-white rounded-lg font-semibold transition-all duration-300 transform hover:scale-105">
-                    Contact Us
-                </button>
+            <!-- Statistics Section -->
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
+                    Trusted by <span class="text-teal-400">Thousands</span> of Companies
+                </h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto mb-12">
+                    Join the growing community of security-conscious organizations protecting their teams from data breaches.
+                </p>
+            </div>
+
+            <!-- Statistics Grid -->
+            <div class="grid md:grid-cols-4 gap-8 mb-16">
+                <!-- Stat 1 -->
+                <div class="text-center p-6">
+                    <div class="text-4xl font-bold text-teal-400 mb-2">500+</div>
+                    <div class="text-gray-300 text-sm font-medium">Companies Protected</div>
+                </div>
+
+                <!-- Stat 2 -->
+                <div class="text-center p-6">
+                    <div class="text-4xl font-bold text-teal-400 mb-2">50K+</div>
+                    <div class="text-gray-300 text-sm font-medium">Email Addresses Monitored</div>
+                </div>
+
+                <!-- Stat 3 -->
+                <div class="text-center p-6">
+                    <div class="text-4xl font-bold text-teal-400 mb-2">99.9%</div>
+                    <div class="text-gray-300 text-sm font-medium">Uptime Guarantee</div>
+                </div>
+
+                <!-- Stat 4 -->
+                <div class="text-center p-6">
+                    <div class="text-4xl font-bold text-teal-400 mb-2">&lt;30s</div>
+                    <div class="text-gray-300 text-sm font-medium">Average Alert Time</div>
+                </div>
+            </div>
+
+            <!-- Proof Points -->
+            <div class="text-center">
+                <div class="inline-flex items-center space-x-8 text-gray-400 text-sm">
+                    <div class="flex items-center">
+                        <i class="fas fa-check-circle text-teal-400 mr-2"></i>
+                        SOC 2 Type II Compliant
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-check-circle text-teal-400 mr-2"></i>
+                        GDPR Ready
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-check-circle text-teal-400 mr-2"></i>
+                        ISO 27001 Certified
+                    </div>
+                </div>
             </div>
         </div>
     </div>
