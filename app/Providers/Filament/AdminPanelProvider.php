@@ -31,7 +31,19 @@ class AdminPanelProvider extends PanelProvider
             ->login()
             ->brandName('IsMyTeamPawned')
             ->colors([
-                'primary' => Color::Blue,
+                'primary' => [
+                    50 => '238, 246, 248',
+                    100 => '222, 237, 241',
+                    200 => '186, 223, 229',
+                    300 => '150, 209, 217',
+                    400 => '114, 195, 205',
+                    500 => '78, 181, 193',
+                    600 => '26, 86, 103', // Our brand color #1A5667
+                    700 => '22, 74, 88',
+                    800 => '18, 62, 73',
+                    900 => '14, 50, 58',
+                    950 => '10, 38, 43',
+                ],
             ])
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\Filament\Resources')
             ->resources([
