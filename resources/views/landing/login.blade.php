@@ -9,6 +9,16 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 
+        /* Brand Color Variables - Using your brand color #1A5667 */
+        :root {
+            --brand-primary: #1A5667;      /* Main brand color - Your dark teal */
+            --brand-secondary: #134A5A;    /* Darker shade for gradients */
+            --brand-light: #2A7A8F;        /* Lighter shade for hover effects */
+            --brand-lighter: #3B9BB3;      /* Even lighter for highlights */
+            --brand-dark: #0F3D4A;         /* Darker shade for active states */
+            --brand-rgb: 26, 86, 103;      /* RGB values for opacity effects */
+        }
+
         body {
             font-family: 'Inter', sans-serif;
         }
@@ -21,7 +31,7 @@
         }
 
         .spotlight {
-            background: radial-gradient(ellipse at center, rgba(0, 212, 255, 0.15) 0%, rgba(0, 212, 255, 0.08) 40%, transparent 70%);
+            background: radial-gradient(ellipse at center, rgba(var(--brand-rgb), 0.15) 0%, rgba(var(--brand-rgb), 0.08) 40%, transparent 70%);
         }
 
         .dark-corners {
@@ -30,13 +40,13 @@
 
         .login-card {
             background: linear-gradient(145deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2));
-            border: 1px solid rgba(0, 212, 255, 0.15);
+            border: 1px solid rgba(var(--brand-rgb), 0.15);
             backdrop-filter: blur(10px);
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
         }
 
         .btn-glow:hover {
-            box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+            box-shadow: 0 0 20px rgba(var(--brand-rgb), 0.3);
         }
     </style>
 </head>
@@ -59,10 +69,10 @@
                     </div>
                 </div>
                 <div class="flex items-center space-x-6">
-                    <a href="#" class="text-white hover:text-cyan-400 transition-colors">News</a>
-                    <a href="#" class="text-white hover:text-cyan-400 transition-colors">Breach</a>
-                    <a href="{{ route('login') }}" class="text-white hover:text-cyan-400 transition-colors">Login</a>
-                    <a href="{{ route('register') }}" class="bg-cyan-500 hover:bg-cyan-600 text-white px-4 py-2 rounded-md text-sm font-medium transition-all btn-glow">Register</a>
+                    <a href="#" class="text-white hover:text-teal-400 transition-colors">News</a>
+                    <a href="#" class="text-white hover:text-teal-400 transition-colors">Breach</a>
+                    <a href="{{ route('login') }}" class="text-white hover:text-teal-400 transition-colors">Login</a>
+                    <a href="{{ route('register') }}" class="bg-teal-700 hover:bg-teal-800 text-white px-4 py-2 rounded-md text-sm font-medium transition-all btn-glow">Register</a>
                 </div>
             </div>
         </div>
@@ -72,7 +82,7 @@
         <div class="max-w-md w-full space-y-8">
             <div class="login-card rounded-xl p-8">
                 <div class="text-center">
-                    <div class="mx-auto h-16 w-16 flex items-center justify-center rounded-full bg-gradient-to-r from-cyan-500 to-cyan-600 mb-6">
+                    <div class="mx-auto h-16 w-16 flex items-center justify-center rounded-full bg-gradient-to-r from-teal-700 to-teal-800 mb-6">
                         <i class="fas fa-shield-alt text-white text-2xl"></i>
                     </div>
                     <h2 class="text-3xl font-bold text-white mb-2">
@@ -100,20 +110,20 @@
                         <div>
                             <label for="email" class="block text-sm font-medium text-gray-300 mb-2">Email address</label>
                             <input id="email" name="email" type="email" autocomplete="email" required
-                                   class="w-full px-4 py-3 bg-black bg-opacity-50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 transition-colors"
+                                   class="w-full px-4 py-3 bg-black bg-opacity-50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-teal-400 focus:ring-1 focus:ring-teal-400 transition-colors"
                                    placeholder="Enter your email" value="{{ old('email') }}">
                         </div>
                         <div>
                             <label for="password" class="block text-sm font-medium text-gray-300 mb-2">Password</label>
                             <input id="password" name="password" type="password" autocomplete="current-password" required
-                                   class="w-full px-4 py-3 bg-black bg-opacity-50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 transition-colors"
+                                   class="w-full px-4 py-3 bg-black bg-opacity-50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-teal-400 focus:ring-1 focus:ring-teal-400 transition-colors"
                                    placeholder="Enter your password">
                         </div>
                     </div>
 
                     <div>
                         <button type="submit"
-                                class="w-full py-3 bg-gradient-to-r from-cyan-500 to-cyan-600 hover:from-cyan-600 hover:to-cyan-700 text-white rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 btn-glow">
+                                class="w-full py-3 bg-gradient-to-r from-teal-700 to-teal-800 hover:from-teal-800 hover:to-teal-900 text-white rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 btn-glow">
                             Sign In
                         </button>
                     </div>
@@ -121,7 +131,7 @@
                     <div class="text-center">
                         <p class="text-sm text-gray-400">
                             Don't have an account?
-                            <a href="{{ route('register') }}" class="font-medium text-cyan-400 hover:text-cyan-300 transition-colors">
+                            <a href="{{ route('register') }}" class="font-medium text-teal-400 hover:text-teal-300 transition-colors">
                                 Create one
                             </a>
                         </p>
