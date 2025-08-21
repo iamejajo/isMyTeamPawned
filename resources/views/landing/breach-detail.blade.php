@@ -292,40 +292,46 @@
             <h2 class="text-3xl font-bold text-white mb-8">Recent Security News</h2>
             <div class="grid md:grid-cols-3 gap-6">
                 <!-- News Item 1 -->
-                <div class="news-card rounded-xl p-6">
-                    <span class="text-gray-400 text-sm">2 hours ago</span>
-                    <h3 class="text-lg font-bold text-white mb-2 mt-2">
-                        Major Data Breach Affects 50 Million Users
-                    </h3>
-                    <p class="text-gray-300 text-xs mb-3">
-                        A significant data breach has been reported affecting millions of users...
-                    </p>
-                    <span class="text-teal-400 text-sm font-medium">Read More →</span>
-                </div>
+                <a href="{{ route('news.detail', 1) }}" class="block">
+                    <div class="news-card rounded-xl p-6 hover:border-teal-400 transition-all">
+                        <span class="text-gray-400 text-sm">2 hours ago</span>
+                        <h3 class="text-lg font-bold text-white mb-2 mt-2">
+                            Major Data Breach Affects 50 Million Users
+                        </h3>
+                        <p class="text-gray-300 text-xs mb-3">
+                            A significant data breach has been reported affecting millions of users...
+                        </p>
+                        <span class="text-teal-400 text-sm font-medium">Read More →</span>
+                    </div>
+                </a>
 
                 <!-- News Item 2 -->
-                <div class="news-card rounded-xl p-6">
-                    <span class="text-gray-400 text-sm">1 day ago</span>
-                    <h3 class="text-lg font-bold text-white mb-2 mt-2">
-                        New Phishing Campaign Targets Corporate Email
-                    </h3>
-                    <p class="text-gray-300 text-xs mb-3">
-                        Security researchers have identified a sophisticated phishing campaign...
-                    </p>
-                    <span class="text-teal-400 text-sm font-medium">Read More →</span>
-                </div>
+                <a href="{{ route('news.detail', 2) }}" class="block">
+                    <div class="news-card rounded-xl p-6 hover:border-teal-400 transition-all">
+                        <span class="text-gray-400 text-sm">1 day ago</span>
+                        <h3 class="text-lg font-bold text-white mb-2 mt-2">
+                            New Phishing Campaign Targets Corporate Email
+                        </h3>
+                        <p class="text-gray-300 text-xs mb-3">
+                            Security researchers have identified a sophisticated phishing campaign...
+                        </p>
+                        <span class="text-teal-400 text-sm font-medium">Read More →</span>
+                    </div>
+                </a>
 
                 <!-- News Item 3 -->
-                <div class="news-card rounded-xl p-6">
-                    <span class="text-gray-400 text-sm">3 days ago</span>
-                    <h3 class="text-lg font-bold text-white mb-2 mt-2">
-                        Zero-Day Vulnerability Discovered
-                    </h3>
-                    <p class="text-gray-300 text-xs mb-3">
-                        A critical zero-day vulnerability has been discovered that affects...
-                    </p>
-                    <span class="text-teal-400 text-sm font-medium">Read More →</span>
-                </div>
+                <a href="{{ route('news.detail', 3) }}" class="block">
+                    <div class="news-card rounded-xl p-6 hover:border-teal-400 transition-all">
+                        <span class="text-gray-400 text-sm">3 days ago</span>
+                        <h3 class="text-lg font-bold text-white mb-2 mt-2">
+                            Zero-Day Vulnerability Discovered
+                        </h3>
+                        <p class="text-gray-300 text-xs mb-3">
+                            A critical zero-day vulnerability has been discovered that affects...
+                        </p>
+                        <span class="text-teal-400 text-sm font-medium">Read More →</span>
+                    </div>
+                </a>
             </div>
         </div>
     </div>

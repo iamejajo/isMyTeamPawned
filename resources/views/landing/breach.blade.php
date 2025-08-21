@@ -379,44 +379,74 @@
             </div>
 
             <!-- Top Breaches by Impact -->
-            <div>
+            <div class="mt-20">
                 <h2 class="text-3xl font-bold text-white mb-8">Top Breaches by Impact</h2>
                 <div class="grid md:grid-cols-3 gap-6">
                     <!-- Top Breach 1 -->
-                    <div class="breach-card rounded-xl p-6">
-                        <div class="flex items-center justify-between mb-3">
-                            <span class="bg-red-500 text-white text-xs px-2 py-1 rounded-full">#1</span>
-                            <span class="text-gray-400 text-sm">2023</span>
+                    <a href="{{ route('breach.detail', 3) }}" class="block">
+                        <div class="breach-card rounded-xl p-6 hover:border-teal-400 transition-all group">
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="bg-red-500 text-white text-xs px-2 py-1 rounded-full">#1</span>
+                                <span class="text-gray-400 text-sm">2023</span>
+                            </div>
+                            <div class="flex items-center space-x-3 mb-3">
+                                <div class="w-10 h-10 bg-red-500 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-exclamation-triangle text-white text-sm"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-bold text-white">SocialMedia Platform</h3>
+                                    <div class="text-gray-400 text-xs">Social Media</div>
+                                </div>
+                            </div>
+                            <div class="text-2xl font-bold text-red-400 mb-2">250M+</div>
+                            <div class="text-gray-300 text-xs mb-3">Records exposed in the largest breach of 2023</div>
+                            <span class="text-teal-400 text-sm font-medium group-hover:text-teal-300 transition-colors">View Details →</span>
                         </div>
-                        <h3 class="text-lg font-bold text-white mb-2">MegaCorp Breach</h3>
-                        <div class="text-2xl font-bold text-teal-400 mb-2">500M+</div>
-                        <div class="text-gray-300 text-xs mb-3">Records exposed in the largest breach of 2023</div>
-                        <span class="text-teal-400 text-sm font-medium">View Details →</span>
-                    </div>
+                    </a>
 
                     <!-- Top Breach 2 -->
-                    <div class="breach-card rounded-xl p-6">
-                        <div class="flex items-center justify-between mb-3">
-                            <span class="bg-orange-500 text-white text-xs px-2 py-1 rounded-full">#2</span>
-                            <span class="text-gray-400 text-sm">2023</span>
+                    <a href="{{ route('breach.detail', 1) }}" class="block">
+                        <div class="breach-card rounded-xl p-6 hover:border-teal-400 transition-all group">
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="bg-orange-500 text-white text-xs px-2 py-1 rounded-full">#2</span>
+                                <span class="text-gray-400 text-sm">2023</span>
+                            </div>
+                            <div class="flex items-center space-x-3 mb-3">
+                                <div class="w-10 h-10 bg-orange-500 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-exclamation-triangle text-white text-sm"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-bold text-white">TechCorp Inc</h3>
+                                    <div class="text-gray-400 text-xs">Technology</div>
+                                </div>
+                            </div>
+                            <div class="text-2xl font-bold text-orange-400 mb-2">15.2M+</div>
+                            <div class="text-gray-300 text-xs mb-3">Recent critical breach with widespread impact</div>
+                            <span class="text-teal-400 text-sm font-medium group-hover:text-teal-300 transition-colors">View Details →</span>
                         </div>
-                        <h3 class="text-lg font-bold text-white mb-2">SocialMedia Inc</h3>
-                        <div class="text-2xl font-bold text-teal-400 mb-2">250M+</div>
-                        <div class="text-gray-300 text-xs mb-3">User data compromised in API vulnerability</div>
-                        <span class="text-teal-400 text-sm font-medium">View Details →</span>
-                    </div>
+                    </a>
 
                     <!-- Top Breach 3 -->
-                    <div class="breach-card rounded-xl p-6">
-                        <div class="flex items-center justify-between mb-3">
-                            <span class="bg-yellow-500 text-white text-xs px-2 py-1 rounded-full">#3</span>
-                            <span class="text-gray-400 text-sm">2023</span>
+                    <a href="{{ route('breach.detail', 4) }}" class="block">
+                        <div class="breach-card rounded-xl p-6 hover:border-teal-400 transition-all group">
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="bg-yellow-500 text-white text-xs px-2 py-1 rounded-full">#3</span>
+                                <span class="text-gray-400 text-sm">2023</span>
+                            </div>
+                            <div class="flex items-center space-x-3 mb-3">
+                                <div class="w-10 h-10 bg-yellow-500 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-exclamation-triangle text-white text-sm"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-bold text-white">CloudProvider</h3>
+                                    <div class="text-gray-400 text-xs">Cloud Services</div>
+                                </div>
+                            </div>
+                            <div class="text-2xl font-bold text-yellow-400 mb-2">100M+</div>
+                            <div class="text-gray-300 text-xs mb-3">Configuration error led to data exposure</div>
+                            <span class="text-teal-400 text-sm font-medium group-hover:text-teal-300 transition-colors">View Details →</span>
                         </div>
-                        <h3 class="text-lg font-bold text-white mb-2">CloudProvider</h3>
-                        <div class="text-2xl font-bold text-teal-400 mb-2">100M+</div>
-                        <div class="text-gray-300 text-xs mb-3">Configuration error led to data exposure</div>
-                        <span class="text-teal-400 text-sm font-medium">View Details →</span>
-                    </div>
+                    </a>
                 </div>
             </div>
         </div>
