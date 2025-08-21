@@ -89,12 +89,12 @@ class LandingController extends Controller
         try {
             DB::beginTransaction();
 
-            // Create the user (organization owner) - always as client
+            // Create the user (organization owner) - as super_admin since they're creating the organization
             $user = User::create([
                 'name' => $request->name,
                 'email' => $request->email,
                 'password' => Hash::make($request->password),
-                'role' => 'client',
+                'role' => 'super_admin', // Organization creators are super_admin
             ]);
 
             // Create the organization

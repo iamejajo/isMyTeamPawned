@@ -58,7 +58,7 @@
     <div class="fixed inset-0 spotlight pointer-events-none"></div>
 
     <!-- Navigation -->
-    <nav class="relative z-10 bg-black bg-opacity-20 backdrop-blur-sm border-b border-gray-800">
+    <nav class="relative z-10 bg-black bg-opacity-90 backdrop-blur-sm border-b border-gray-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16">
                 <div class="flex items-center">
@@ -68,13 +68,36 @@
                         </a>
                     </div>
                 </div>
-                <div class="flex items-center space-x-6">
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-6">
                     <a href="{{ route('home') }}" class="text-white hover:text-teal-400 transition-colors">Home</a>
                     <a href="{{ route('news') }}" class="text-white hover:text-teal-400 transition-colors">News</a>
                     <a href="{{ route('breach') }}" class="text-white hover:text-teal-400 transition-colors">Breach</a>
                     <a href="{{ route('pricing') }}" class="text-white hover:text-teal-400 transition-colors">Pricing</a>
                     <a href="{{ route('login') }}" class="text-white hover:text-teal-400 transition-colors">Login</a>
                     <a href="{{ route('register') }}" class="bg-teal-700 hover:bg-teal-800 text-white px-4 py-2 rounded-md text-sm font-medium transition-all btn-glow">Register</a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" class="text-white hover:text-teal-400 focus:outline-none focus:text-teal-400">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Navigation Menu -->
+            <div id="mobile-menu" class="hidden md:hidden">
+                <div class="px-2 pt-2 pb-3 space-y-1 bg-black bg-opacity-95 border-t border-gray-800">
+                    <a href="{{ route('home') }}" class="text-white hover:text-teal-400 block px-3 py-2 text-base font-medium transition-colors">Home</a>
+                    <a href="{{ route('news') }}" class="text-white hover:text-teal-400 block px-3 py-2 text-base font-medium transition-colors">News</a>
+                    <a href="{{ route('breach') }}" class="text-white hover:text-teal-400 block px-3 py-2 text-base font-medium transition-colors">Breach</a>
+                    <a href="{{ route('pricing') }}" class="text-white hover:text-teal-400 block px-3 py-2 text-base font-medium transition-colors">Pricing</a>
+                    <a href="{{ route('login') }}" class="text-white hover:text-teal-400 block px-3 py-2 text-base font-medium transition-colors">Login</a>
+                    <a href="{{ route('register') }}" class="bg-teal-700 hover:bg-teal-800 text-white block px-3 py-2 text-base font-medium transition-all btn-glow">Register</a>
                 </div>
             </div>
         </div>
@@ -160,6 +183,25 @@
             </div>
         </div>
     </div>
+
+    <script>
+        // Mobile menu functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            mobileMenuButton.addEventListener('click', function() {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // Close mobile menu when clicking outside
+            document.addEventListener('click', function(event) {
+                if (!mobileMenuButton.contains(event.target) && !mobileMenu.contains(event.target)) {
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
 
