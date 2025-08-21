@@ -1,12 +1,11 @@
-# Use official PHP 8.4 with FPM
 FROM php:8.4-fpm
 
 # Install system dependencies & PHP extensions
 RUN apt-get update && apt-get install -y \
     git curl unzip zip libpng-dev libjpeg-dev libfreetype6-dev \
-    libonig-dev libxml2-dev libzip-dev \
+    libonig-dev libxml2-dev libzip-dev libicu-dev \
     && docker-php-ext-configure gd --with-freetype --with-jpeg \
-    && docker-php-ext-install pdo_mysql mbstring exif pcntl bcmath gd zip
+    && docker-php-ext-install pdo_mysql mbstring exif pcntl bcmath gd zip intl
 
 # Install Composer
 COPY --from=composer:2.6 /usr/bin/composer /usr/bin/composer
@@ -26,7 +25,7 @@ COPY . .
 # Run post-install scripts & optimize autoloader
 RUN composer dump-autoload --optimize
 
-# Build frontend assets (if using Vite/Mix)
+# Build frontend assets (if using Vite/Laravel Mix)
 RUN npm install && npm run build || true
 
 # Set correct permissions
